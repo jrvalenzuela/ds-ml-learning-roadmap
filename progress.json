@@ -1,0 +1,391 @@
+{
+  "meta": {
+    "title": "Data Science, ML & Agentic Engineering",
+    "subtitle": "Ruta práctica de proyectos reproducibles en Ciencia de Datos, Machine Learning, CI/CD y flujos de trabajo agénticos.",
+    "author": "Pepe",
+    "github_profile": "https://github.com/jrvalenzuela",
+    "domains": ["Deportes", "Educación", "Finanzas"],
+    "core_stack": [
+      "Python",
+      "pandas",
+      "Polars",
+      "DuckDB",
+      "Pandera",
+      "scikit-learn",
+      "LightGBM",
+      "SHAP",
+      "pytest",
+      "Ruff",
+      "GitHub Actions"
+    ],
+    "last_updated": "2026-11-26"
+  },
+  "projects": [
+    {
+      "id": "eda-data-quality-pipeline",
+      "number": 1,
+      "title": "Pipeline de EDA y Calidad de Datos Reproducible",
+      "summary": "Pipeline modular de ingesta, validación de contratos de datos, limpieza trazable y reporte exploratorio interactivo guiado por tests.",
+      "local_path": "D:\\Proyectos\\eda-data-quality-pipeline",
+      "repo_url": "",
+      "ci_workflow": "ci.yml",
+      "status": "in_progress",
+      "status_label": "Iniciado · Listo para Fase 1",
+      "domain": "Deportes · Fútbol",
+      "hours_spent": 0,
+      "hours_estimated": 16,
+      "dataset": {
+        "name": "International Football Results (1872–presente)",
+        "url": "https://github.com/martj42/international_results",
+        "notes": "3 tablas CSV relacionadas (results.csv, shootouts.csv y goalscorers.csv) con más de 50.000 partidos internacionales masculinos desde 1872."
+      },
+      "phases": [
+        {
+          "title": "Setup inicial: AGENTS.md, ROADMAP.md, pyproject.toml y skill data-audit",
+          "done": true
+        },
+        {
+          "title": "Setup Git/GitHub: .gitignore estricto, pre-commit (ruff) y primer workflow ci.yml",
+          "done": false
+        },
+        {
+          "title": "Fase 1: Selección de dataset, preguntas de análisis e ingesta en data/raw/",
+          "done": false
+        },
+        {
+          "title": "Fase 2: Auditoría de calidad y contrato de datos con Pandera + pytest",
+          "done": false
+        },
+        {
+          "title": "Fase 3: Limpieza trazable en src/, Parquet/CSV y EDA con pandas/DuckDB (TDD)",
+          "done": false
+        },
+        {
+          "title": "Fase 4: Reporte HTML interactivo en reports/ y verificación visual",
+          "done": false
+        },
+        {
+          "title": "Fase 5 (Opcional): Baseline supervisado con scikit-learn y skill leakage-check",
+          "done": false,
+          "optional": true
+        }
+      ],
+      "learning_outcomes": {
+        "data_ml": [
+          { "text": "Perfilado sistemático de calidad (nulos, duplicados, cardinalidad, outliers)", "done": false },
+          { "text": "Contratos de datos reproducibles con Pandera", "done": false },
+          { "text": "Funciones puras de limpieza trazable y almacenamiento en Parquet", "done": false },
+          { "text": "Visualización exploratoria orientada a responder preguntas de negocio", "done": false }
+        ],
+        "agentic": [
+          { "text": "Diseño de AGENTS.md con rol de mentor + pair programmer", "done": true },
+          { "text": "Creación y uso de la primera Skill personalizada (data-audit)", "done": true },
+          { "text": "Flujo /grill-me + /plan y TDD verificado con pytest", "done": false },
+          { "text": "Verificación visual del reporte HTML con /browser", "done": false }
+        ],
+        "git_cicd": [
+          { "text": "Repositorio propio en GitHub con .gitignore estricto para datos y secretos", "done": false },
+          { "text": "Hooks pre-commit livianos con Ruff y bloqueo de archivos grandes", "done": false },
+          { "text": "Primer pipeline de GitHub Actions (ci.yml) corriendo ruff + pytest con fixtures sintéticos", "done": false }
+        ]
+      },
+      "skills": ["data-audit"],
+      "slash_commands": ["/grill-me", "/plan", "/browser"],
+      "resources": [
+        {
+          "title": "International Football Results from 1872 to present (martj42)",
+          "type": "Dataset",
+          "url": "https://github.com/martj42/international_results",
+          "notes": "Fuente oficial de results.csv, shootouts.csv y goalscorers.csv."
+        },
+        {
+          "title": "Pandera — Data Validation for Python",
+          "type": "Documentación",
+          "url": "https://pandera.readthedocs.io/",
+          "notes": "Referencia principal para definir contratos y esquemas de DataFrames."
+        },
+        {
+          "title": "pytest Documentation",
+          "type": "Documentación",
+          "url": "https://docs.pytest.org/",
+          "notes": "Fixtures sintéticos y parametrización para validar reglas de limpieza."
+        },
+        {
+          "title": "Ruff — An extremely fast Python linter and formatter",
+          "type": "Documentación",
+          "url": "https://docs.astral.sh/ruff/",
+          "notes": "Linting y formato ultra rápido en local y CI."
+        },
+        {
+          "title": "pre-commit Framework",
+          "type": "Documentación",
+          "url": "https://pre-commit.com/",
+          "notes": "Configuración de hooks automáticos antes de cada commit."
+        },
+        {
+          "title": "GitHub Actions Documentation",
+          "type": "Documentación",
+          "url": "https://docs.github.com/en/actions",
+          "notes": "Base para construir el primer workflow de integración continua."
+        }
+      ],
+      "takeaways": []
+    },
+    {
+      "id": "ml-tabular-lab",
+      "number": 2,
+      "title": "Laboratorio de ML Tabular (estilo Kaggle en producción)",
+      "summary": "Flujo end-to-end de modelado tabular con validación cruzada rigurosa, ingeniería de características, LightGBM, explicabilidad con SHAP y control estricto contra data leakage.",
+      "local_path": "D:\\Proyectos\\ml-tabular-lab",
+      "repo_url": "",
+      "ci_workflow": "ci.yml",
+      "status": "pending",
+      "status_label": "Pendiente",
+      "domain": "Por definir (Deportes / Educación / Finanzas)",
+      "hours_spent": 0,
+      "hours_estimated": 22,
+      "dataset": {
+        "name": "Por seleccionar al iniciar el proyecto",
+        "url": "",
+        "notes": "Problema tabular supervisado (clasificación o regresión) liviano para CPU."
+      },
+      "phases": [
+        { "title": "Fase 1: Definición de métrica de negocio, split y estrategia de validación cruzada", "done": false },
+        { "title": "Fase 2: Pipeline baseline en scikit-learn + tests anti-data leakage", "done": false },
+        { "title": "Fase 3: Feature engineering iterativo y registro estructurado de experimentos", "done": false },
+        { "title": "Fase 4: Entrenamiento y tuning ligero con LightGBM en CPU", "done": false },
+        { "title": "Fase 5: Interpretabilidad con SHAP, análisis de errores y reporte final", "done": false }
+      ],
+      "learning_outcomes": {
+        "data_ml": [
+          { "text": "Prevención de data leakage mediante Pipelines de scikit-learn", "done": false },
+          { "text": "Selección de métricas adecuadas y validación cruzada estratificada/temporal", "done": false },
+          { "text": "Feature engineering reproducible y entrenamiento con LightGBM", "done": false },
+          { "text": "Explicabilidad global y local de predicciones con SHAP", "done": false }
+        ],
+        "agentic": [
+          { "text": "Diseño de experimentos guiado con /grill-me y /plan", "done": false },
+          { "text": "Creación de la Skill reutilizable leakage-check", "done": false },
+          { "text": "Registro disciplinado de hipótesis y resultados de experimentos", "done": false }
+        ],
+        "git_cicd": [
+          { "text": "Flujo de trabajo basado en ramas y Pull Requests", "done": false },
+          { "text": "Hook pre-push y CI con smoke tests sintéticos del pipeline de entrenamiento", "done": false },
+          { "text": "Ejecución automática de tests anti-leakage en cada PR", "done": false }
+        ]
+      },
+      "skills": ["leakage-check"],
+      "slash_commands": ["/grill-me", "/plan", "/learn"],
+      "resources": [
+        {
+          "title": "scikit-learn — Common pitfalls and recommended practices",
+          "type": "Guía",
+          "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+          "notes": "Referencia indispensable sobre data leakage y validación correcta."
+        },
+        {
+          "title": "LightGBM Documentation",
+          "type": "Documentación",
+          "url": "https://lightgbm.readthedocs.io/",
+          "notes": "Gradient boosting rápido y eficiente en memoria para CPU."
+        },
+        {
+          "title": "SHAP — SHapley Additive exPlanations",
+          "type": "Documentación",
+          "url": "https://shap.readthedocs.io/",
+          "notes": "Explicabilidad de modelos basados en árboles (TreeExplainer)."
+        }
+      ],
+      "takeaways": []
+    },
+    {
+      "id": "text-to-sql-evals",
+      "number": 3,
+      "title": "Analista Conversacional Text-to-SQL con Evaluaciones",
+      "summary": "Asistente analítico conectado a DuckDB/SQLite mediante tool calling y MCP, respaldado por un set de evaluaciones automatizadas para medir precisión y seguridad de consultas.",
+      "local_path": "D:\\Proyectos\\text-to-sql-evals",
+      "repo_url": "",
+      "ci_workflow": "ci.yml",
+      "status": "pending",
+      "status_label": "Pendiente",
+      "domain": "Por definir (Deportes / Educación / Finanzas)",
+      "hours_spent": 0,
+      "hours_estimated": 20,
+      "dataset": {
+        "name": "Por seleccionar al iniciar el proyecto",
+        "url": "",
+        "notes": "Modelo relacional multi-tabla cargado en DuckDB o SQLite."
+      },
+      "phases": [
+        { "title": "Fase 1: Modelado de tablas analíticas en DuckDB/SQLite y consultas SQL base", "done": false },
+        { "title": "Fase 2: Capa segura de ejecución SQL (solo lectura) y tool calling", "done": false },
+        { "title": "Fase 3: Integración con MCP para consultar el esquema y datos", "done": false },
+        { "title": "Fase 4: Benchmark de evaluaciones (casos normales + edge cases) y métricas", "done": false }
+      ],
+      "learning_outcomes": {
+        "data_ml": [
+          { "text": "SQL analítico avanzado (CTEs, window functions, agregaciones) en DuckDB/SQLite", "done": false },
+          { "text": "Diseño de suites de evaluación (Evals) para sistemas con LLMs", "done": false },
+          { "text": "Guardrails de seguridad para consultas generadas (read-only, timeouts)", "done": false }
+        ],
+        "agentic": [
+          { "text": "Integración de servidores MCP (Model Context Protocol)", "done": false },
+          { "text": "Uso de subagentes para generar edge cases y preguntas adversariales", "done": false },
+          { "text": "Iteración de prompts basada en métricas de evaluación", "done": false }
+        ],
+        "git_cicd": [
+          { "text": "Separación en CI: tests deterministas en cada push vs. evals bajo demanda", "done": false },
+          { "text": "Workflow manual (workflow_dispatch) con manejo seguro de GitHub Secrets", "done": false }
+        ]
+      },
+      "skills": ["sql-eval-check"],
+      "slash_commands": ["/plan", "/learn"],
+      "resources": [
+        {
+          "title": "DuckDB Documentation",
+          "type": "Documentación",
+          "url": "https://duckdb.org/docs/",
+          "notes": "Motor SQL analítico embebido, ideal para trabajar en local."
+        },
+        {
+          "title": "Model Context Protocol (MCP)",
+          "type": "Documentación",
+          "url": "https://modelcontextprotocol.io/",
+          "notes": "Estándar abierto para conectar agentes con herramientas y bases de datos."
+        }
+      ],
+      "takeaways": []
+    },
+    {
+      "id": "api-drift-pipeline",
+      "number": 4,
+      "title": "Pipeline Automatizado con API Real + Data Drift",
+      "summary": "Ingesta periódica desde una API pública hacia archivos Parquet versionados por fecha, detección estadística de cambios de distribución (data drift) y alertas automatizadas en la nube.",
+      "local_path": "D:\\Proyectos\\api-drift-pipeline",
+      "repo_url": "",
+      "ci_workflow": "scheduled-drift.yml",
+      "status": "pending",
+      "status_label": "Pendiente",
+      "domain": "Por definir (Deportes / Educación / Finanzas)",
+      "hours_spent": 0,
+      "hours_estimated": 20,
+      "dataset": {
+        "name": "API pública en tiempo real (por seleccionar)",
+        "url": "",
+        "notes": "API abierta sin costos (ej. indicadores financieros, estadísticas deportivas o datos abiertos educativos)."
+      },
+      "phases": [
+        { "title": "Fase 1: Cliente de ingesta resiliente (reintentos, timeouts, validación de esquema)", "done": false },
+        { "title": "Fase 2: Almacenamiento particionado en Parquet e histórico de snapshots", "done": false },
+        { "title": "Fase 3: Cálculo de métricas de data drift y generación de reportes", "done": false },
+        { "title": "Fase 4: Orquestación programada con GitHub Actions (cron) y alertas", "done": false }
+      ],
+      "learning_outcomes": {
+        "data_ml": [
+          { "text": "Ingesta idempotente desde APIs REST con manejo de errores y particionado Parquet", "done": false },
+          { "text": "Detección estadística de data drift (PSI, KS-test, cambios de nulos/categorías)", "done": false },
+          { "text": "Monitoreo continuo de calidad de datos en producción", "done": false }
+        ],
+        "agentic": [
+          { "text": "Automatización recurrente y manejo de fallos con /schedule", "done": false },
+          { "text": "Hooks de validación automática antes de persistir datos", "done": false }
+        ],
+        "git_cicd": [
+          { "text": "Workflows programados con cron (schedule) en GitHub Actions", "done": false },
+          { "text": "Publicación de reportes como artifacts y apertura automática de Issues ante drift", "done": false }
+        ]
+      },
+      "skills": ["drift-monitor"],
+      "slash_commands": ["/schedule", "/plan"],
+      "resources": [
+        {
+          "title": "Evidently AI — What is Data Drift?",
+          "type": "Artículo",
+          "url": "https://www.evidentlyai.com/ml-in-production/data-drift",
+          "notes": "Guía clara sobre métricas estadísticas y umbrales de drift."
+        },
+        {
+          "title": "GitHub Actions — Events that trigger workflows (schedule)",
+          "type": "Documentación",
+          "url": "https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule",
+          "notes": "Referencia para programar ejecuciones periódicas con cron."
+        }
+      ],
+      "takeaways": []
+    },
+    {
+      "id": "multi-agent-analyst",
+      "number": 5,
+      "title": "Mini-Equipo Multi-Agente de Análisis de Datos",
+      "summary": "Sistema colaborativo de agentes especializados (calidad de datos, análisis estadístico, crítico/revisor y comunicador ejecutivo) capaz de producir informes auditables de extremo a extremo.",
+      "local_path": "D:\\Proyectos\\multi-agent-analyst",
+      "repo_url": "",
+      "ci_workflow": "ci.yml",
+      "status": "pending",
+      "status_label": "Pendiente",
+      "domain": "Por definir (Deportes / Educación / Finanzas)",
+      "hours_spent": 0,
+      "hours_estimated": 24,
+      "dataset": {
+        "name": "Caso integrador (por seleccionar)",
+        "url": "",
+        "notes": "Dataset rico para poner a prueba análisis crítico, hipótesis y síntesis ejecutiva."
+      },
+      "phases": [
+        { "title": "Fase 1: Diseño de roles, contratos de handoff y arquitectura multi-agente", "done": false },
+        { "title": "Fase 2: Implementación de especialistas (auditoría, estadística, visualización)", "done": false },
+        { "title": "Fase 3: Agente crítico/verificador y gestión eficiente de contexto", "done": false },
+        { "title": "Fase 4: Publicación automatizada de reportes ejecutivos y flujo de PR completo", "done": false }
+      ],
+      "learning_outcomes": {
+        "data_ml": [
+          { "text": "Pensamiento crítico estadístico: detección de sesgos, correlación vs. causalidad", "done": false },
+          { "text": "Comunicación ejecutiva basada en evidencia y storytelling con datos", "done": false }
+        ],
+        "agentic": [
+          { "text": "Orquestación de subagentes especializados y coordinación con /teamwork", "done": false },
+          { "text": "Gestión avanzada del contexto en sesiones largas (/compact)", "done": false },
+          { "text": "Reutilización y composición de Skills creadas en los proyectos 1 al 4", "done": false }
+        ],
+        "git_cicd": [
+          { "text": "Protección de rama main con checks obligatorios y plantilla de Pull Request", "done": false },
+          { "text": "Publicación automática de reportes finales mediante artifacts o GitHub Pages", "done": false }
+        ]
+      },
+      "skills": ["executive-review"],
+      "slash_commands": ["/teamwork", "/compact", "/boost"],
+      "resources": [
+        {
+          "title": "GitHub Pages Documentation",
+          "type": "Documentación",
+          "url": "https://docs.github.com/en/pages",
+          "notes": "Publicación automatizada de reportes y documentación estática."
+        }
+      ],
+      "takeaways": []
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-11-26",
+      "project_id": "eda-data-quality-pipeline",
+      "tag": "Proyecto #1",
+      "title": "Dataset elegido: Fútbol Internacional (1872–presente)",
+      "details": "Se seleccionó el dataset abierto martj42/international_results (results.csv, shootouts.csv y goalscorers.csv) en la temática de Deportes para arrancar la Fase 1."
+    },
+    {
+      "date": "2026-11-26",
+      "project_id": "_orquestador",
+      "tag": "CI-CD & Portfolio",
+      "title": "Estándar Git/GitHub Actions + Dashboard de Portafolio",
+      "details": "Se definió la estrategia 1 proyecto = 1 repositorio con progresión de pre-commit y GitHub Actions, y se creó el dashboard público generable para GitHub Pages."
+    },
+    {
+      "date": "2026-11-25",
+      "project_id": "eda-data-quality-pipeline",
+      "tag": "Proyecto #1",
+      "title": "Inicialización del Proyecto #1",
+      "details": "Se creó el scaffolding de eda-data-quality-pipeline con AGENTS.md, ROADMAP.md, pyproject.toml y la primera skill personalizada data-audit."
+    }
+  ]
+}
