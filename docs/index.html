@@ -967,6 +967,7 @@
     ],
     "core_stack": [
       "Python",
+      "uv",
       "pandas",
       "Polars",
       "DuckDB",
@@ -986,12 +987,12 @@
       "number": 1,
       "title": "Pipeline de EDA y Calidad de Datos Reproducible",
       "summary": "Pipeline modular de ingesta, validación de contratos de datos, limpieza trazable y reporte exploratorio interactivo guiado por tests.",
-      "repo_url": "",
+      "repo_url": "https://github.com/jrvalenzuela/eda-data-quality-pipeline",
       "ci_workflow": "ci.yml",
       "status": "in_progress",
-      "status_label": "Iniciado · Listo para Fase 1",
+      "status_label": "En curso · Fase 1",
       "domain": "Deportes · Fútbol",
-      "hours_spent": 0,
+      "hours_spent": 1,
       "hours_estimated": 16,
       "dataset": {
         "name": "International Football Results (1872–presente)",
@@ -1004,11 +1005,11 @@
           "done": true
         },
         {
-          "title": "Setup Git/GitHub: .gitignore estricto, pre-commit (ruff) y primer workflow ci.yml",
-          "done": false
+          "title": "Setup Git/GitHub: entorno uv, .gitignore estricto, pre-commit (ruff) y workflow ci.yml",
+          "done": true
         },
         {
-          "title": "Fase 1: Selección de dataset, preguntas de análisis e ingesta en data/raw/",
+          "title": "Fase 1: Selección de dataset, ingesta reproducible y preguntas de análisis (/grill-me)",
           "done": false
         },
         {
@@ -1069,15 +1070,15 @@
         "git_cicd": [
           {
             "text": "Repositorio propio en GitHub con .gitignore estricto para datos y secretos",
-            "done": false
+            "done": true
           },
           {
             "text": "Hooks pre-commit livianos con Ruff y bloqueo de archivos grandes",
-            "done": false
+            "done": true
           },
           {
             "text": "Primer pipeline de GitHub Actions (ci.yml) corriendo ruff + pytest con fixtures sintéticos",
-            "done": false
+            "done": true
           }
         ]
       },
@@ -1121,15 +1122,24 @@
           "notes": "Configuración de hooks automáticos antes de cada commit."
         },
         {
+          "title": "uv — An extremely fast Python package and project manager",
+          "type": "Documentación",
+          "url": "https://docs.astral.sh/uv/",
+          "notes": "Gestión reproducible de entornos virtuales y lockfile (uv.lock) en local y CI."
+        },
+        {
           "title": "GitHub Actions Documentation",
           "type": "Documentación",
           "url": "https://docs.github.com/en/actions",
           "notes": "Base para construir el primer workflow de integración continua."
         }
       ],
-      "takeaways": [],
-      "computed_progress": 18,
-      "computed_phases_done": 1,
+      "takeaways": [
+        "Entorno reproducible con uv + pre-commit (ruff y bloqueo de archivos >500 KB) + GitHub Actions CI funcionando desde los primeros commits.",
+        "Script de ingesta reproducible con tests unitarios manteniendo los CSVs crudos fuera de Git."
+      ],
+      "computed_progress": 41,
+      "computed_phases_done": 2,
       "computed_phases_total": 6
     },
     {
@@ -1548,6 +1558,13 @@
       "date": "2026-11-26",
       "project_id": "eda-data-quality-pipeline",
       "tag": "Proyecto #1",
+      "title": "Setup con uv, pre-commit, CI e ingesta reproducible (~1h)",
+      "details": "Se publicó el repositorio en GitHub con entorno reproducible (uv), hooks pre-commit (ruff y límite de 500 KB), workflow ci.yml y el script de ingesta con tests unitarios para los 3 CSVs de Fútbol Internacional. Pendiente definir las preguntas de análisis con /grill-me para cerrar la Fase 1."
+    },
+    {
+      "date": "2026-11-26",
+      "project_id": "eda-data-quality-pipeline",
+      "tag": "Proyecto #1",
       "title": "Dataset elegido: Fútbol Internacional (1872–presente)",
       "details": "Se seleccionó el dataset abierto martj42/international_results (results.csv, shootouts.csv y goalscorers.csv) en la temática de Deportes para arrancar la Fase 1."
     },
@@ -1567,19 +1584,19 @@
     }
   ],
   "stats": {
-    "overall_progress": 5,
+    "overall_progress": 11,
     "total_projects": 5,
     "completed": 0,
     "in_progress": 1,
     "pending": 4,
-    "phases_done": 1,
+    "phases_done": 2,
     "phases_total": 23,
-    "outcomes_done": 2,
+    "outcomes_done": 5,
     "outcomes_total": 43,
-    "hours_spent": 0,
+    "hours_spent": 1,
     "hours_estimated": 102,
     "skills_total": 5,
-    "resources_total": 14,
+    "resources_total": 15,
     "pillars": {
       "data_ml": {
         "done": 0,
@@ -1592,9 +1609,9 @@
         "pct": 13
       },
       "git_cicd": {
-        "done": 0,
+        "done": 3,
         "total": 12,
-        "pct": 0
+        "pct": 25
       }
     }
   }

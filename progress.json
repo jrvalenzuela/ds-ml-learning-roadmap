@@ -7,6 +7,7 @@
     "domains": ["Deportes", "Educación", "Finanzas"],
     "core_stack": [
       "Python",
+      "uv",
       "pandas",
       "Polars",
       "DuckDB",
@@ -27,12 +28,12 @@
       "title": "Pipeline de EDA y Calidad de Datos Reproducible",
       "summary": "Pipeline modular de ingesta, validación de contratos de datos, limpieza trazable y reporte exploratorio interactivo guiado por tests.",
       "local_path": "D:\\Proyectos\\eda-data-quality-pipeline",
-      "repo_url": "",
+      "repo_url": "https://github.com/jrvalenzuela/eda-data-quality-pipeline",
       "ci_workflow": "ci.yml",
       "status": "in_progress",
-      "status_label": "Iniciado · Listo para Fase 1",
+      "status_label": "En curso · Fase 1",
       "domain": "Deportes · Fútbol",
-      "hours_spent": 0,
+      "hours_spent": 1,
       "hours_estimated": 16,
       "dataset": {
         "name": "International Football Results (1872–presente)",
@@ -45,11 +46,11 @@
           "done": true
         },
         {
-          "title": "Setup Git/GitHub: .gitignore estricto, pre-commit (ruff) y primer workflow ci.yml",
-          "done": false
+          "title": "Setup Git/GitHub: entorno uv, .gitignore estricto, pre-commit (ruff) y workflow ci.yml",
+          "done": true
         },
         {
-          "title": "Fase 1: Selección de dataset, preguntas de análisis e ingesta en data/raw/",
+          "title": "Fase 1: Selección de dataset, ingesta reproducible y preguntas de análisis (/grill-me)",
           "done": false
         },
         {
@@ -84,9 +85,9 @@
           { "text": "Verificación visual del reporte HTML con /browser", "done": false }
         ],
         "git_cicd": [
-          { "text": "Repositorio propio en GitHub con .gitignore estricto para datos y secretos", "done": false },
-          { "text": "Hooks pre-commit livianos con Ruff y bloqueo de archivos grandes", "done": false },
-          { "text": "Primer pipeline de GitHub Actions (ci.yml) corriendo ruff + pytest con fixtures sintéticos", "done": false }
+          { "text": "Repositorio propio en GitHub con .gitignore estricto para datos y secretos", "done": true },
+          { "text": "Hooks pre-commit livianos con Ruff y bloqueo de archivos grandes", "done": true },
+          { "text": "Primer pipeline de GitHub Actions (ci.yml) corriendo ruff + pytest con fixtures sintéticos", "done": true }
         ]
       },
       "skills": ["data-audit"],
@@ -123,13 +124,22 @@
           "notes": "Configuración de hooks automáticos antes de cada commit."
         },
         {
+          "title": "uv — An extremely fast Python package and project manager",
+          "type": "Documentación",
+          "url": "https://docs.astral.sh/uv/",
+          "notes": "Gestión reproducible de entornos virtuales y lockfile (uv.lock) en local y CI."
+        },
+        {
           "title": "GitHub Actions Documentation",
           "type": "Documentación",
           "url": "https://docs.github.com/en/actions",
           "notes": "Base para construir el primer workflow de integración continua."
         }
       ],
-      "takeaways": []
+      "takeaways": [
+        "Entorno reproducible con uv + pre-commit (ruff y bloqueo de archivos >500 KB) + GitHub Actions CI funcionando desde los primeros commits.",
+        "Script de ingesta reproducible con tests unitarios manteniendo los CSVs crudos fuera de Git."
+      ]
     },
     {
       "id": "ml-tabular-lab",
@@ -366,6 +376,13 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-11-26",
+      "project_id": "eda-data-quality-pipeline",
+      "tag": "Proyecto #1",
+      "title": "Setup con uv, pre-commit, CI e ingesta reproducible (~1h)",
+      "details": "Se publicó el repositorio en GitHub con entorno reproducible (uv), hooks pre-commit (ruff y límite de 500 KB), workflow ci.yml y el script de ingesta con tests unitarios para los 3 CSVs de Fútbol Internacional. Pendiente definir las preguntas de análisis con /grill-me para cerrar la Fase 1."
+    },
     {
       "date": "2026-11-26",
       "project_id": "eda-data-quality-pipeline",
